@@ -1,0 +1,132 @@
+/*--------------------------------------------------------------------------------------  
+Complete the exercises below to practice using a variation of different animation types
+the first exercise has been completed as an example 
+-------------------------------------------------------------------------------------- */
+
+
+
+/* Basic styling for each element */
+.format {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px;
+    font-size:auto;
+    font-weight:bold;
+    border-radius:8px;
+  }
+  
+    /* Exercise 1: Create a basic animation */
+    /* Target the element with ID 'animate-me' and make it move horizontally */
+    #animate-me {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        animation: slide 2s infinite alternate;
+      }
+  
+        @keyframes slide {
+        from {
+            transform: translateX(0px);
+        }
+        to {
+            transform: translateX(100px);
+        }
+    }
+
+  
+      /* Exercise 2: Create a more complex animation */
+      /* Target the element with class 'scale-animate' and make it scale up and down */
+      .scale-animate {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        animation: scaleAnim 2s infinite alternate;
+      }
+  
+      @keyframes scaleAnim {
+        from{
+            scale: 40%;
+        }
+        to{
+            scale: 200%
+        }
+      }
+  
+  
+      /* Exercise 3: Create a keyframe animation with multiple steps */
+      /* Target the element with class 'spin' and make it spin continuously */
+      
+      .format.spin{
+        width: 100px; height: 100px;
+        background-color: pink;
+        animation: spin 1s infinite linear;
+      }
+      
+      @keyframes spin {
+        from{
+            transform: rotateZ(0deg);
+        }        
+        to{
+            transform: rotateZ(360deg);
+        }
+      }
+  
+      /* Exercise 4: Create a more advanced animation */
+      /* Target the element with ID 'complex-animate' and make it change color and size */
+      #complex-animate{
+        width: 100px; height: 100px;
+        background-color: red;
+        animation: colorsize 0.5s infinite alternate;
+      }
+      @keyframes colorsize {
+        from{
+            background-color: red;
+            width: 10%;
+        }
+        to{
+            background-color: blue;
+            width: 50%;
+        }
+      }
+  
+  
+      /* Exercise 5: Create a challenging animation */
+      /* Target the element with class 'bounce' and make it bounce and change color */
+      
+  
+      /* Exercise 6: Create a rotating element */
+      /* Target the element with class 'cube' and make it rotate in 3D */
+      
+  
+      /* Exercise 7: Create a pulsating element */
+      /* Target the element with class 'pulse' and make it pulse in size */
+     
+  
+      /* Exercise 8: Create a path animation */
+      /* Target the element with class 'path-animate' and make it move along a curved path */
+      
+  
+      /* Exercise 9: Create a flickering neon effect */
+      /* Target the element with class 'neon' and make it flicker like a neon sign */
+     
+  
+      /* Exercise 10: Create a complex animation sequence */
+      /* Target the element with ID 'sequence' and create a sequence of animations */
+      
+  
+     /* Exercise 11 - Staggered animations */
+     /* We will create three divs that animate differently based on their order. 
+        use a child combinator to style each child element */
+      
+  
+     /*  - Use the nth-child(n) selector to apply different animation delays to each div */
+  
+     
+  
+      /* - Utilise the calc() function within keyframes to dynamically calculate values. */
+      
+  
+   /* Exercise 12: Stopping the animation */
+   /* Add a button element to your html markup. Target this button with a class of .stop-button */
+  
