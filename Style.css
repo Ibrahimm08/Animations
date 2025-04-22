@@ -93,23 +93,101 @@ the first exercise has been completed as an example
   
       /* Exercise 5: Create a challenging animation */
       /* Target the element with class 'bounce' and make it bounce and change color */
-      
+      .bounce{
+        width: 100px; height: 100px;
+        position: absolute;
+        background-color: green;
+        animation: BounceColor 0.5s infinite alternate;
+      }
+
+      @keyframes BounceColor{
+        from{
+          background-color: green;
+          margin-top: 60px;
+        }
+        to{
+          background-color: yellow;
+        }
+      }
   
       /* Exercise 6: Create a rotating element */
       /* Target the element with class 'cube' and make it rotate in 3D */
-      
+      .cube{
+        width: 100px; height: 100px;
+        background-color: bisque;
+        margin-top: 200px;
+        animation: ThreeDrotate 1s infinite linear;
+      }
+      @keyframes ThreeDrotate {
+        from{
+          transform: rotate3d(10, 2, 1, 0deg);
+        }
+        to{
+          transform: rotate3d(5 ,2 ,1, 360deg);
+        }
+      }
   
       /* Exercise 7: Create a pulsating element */
       /* Target the element with class 'pulse' and make it pulse in size */
-     
+     .pulse{
+      width: 100px; height: 100px;
+      background-color: cadetblue;
+      animation: pulse 0.5s infinite alternate;
+     }
+     @keyframes pulse {
+      from{
+        scale: 105%;
+      }
+     }
   
       /* Exercise 8: Create a path animation */
       /* Target the element with class 'path-animate' and make it move along a curved path */
+      .path-animate{
+        width: 100px; height: 100px;
+        animation: CurvPathX 2s infinite ease-in alternate;
+      }
+      .path-animate::after{
+        width: 100px; height: 100px;
+        border-radius: 10px;
+        content: "8";
+        align-content: center;
+        text-align: center;
+        background-color: rgb(193, 77, 77);
+        animation: CurvPathY 2s infinite ease-out alternate;
+      }
       
+      @keyframes CurvPathX {
+        to{
+          animation-timing-function: ease-out;
+          transform: translateX(200px);
+        }
+      }
+      
+      @keyframes CurvPathY {
+        to{
+          animation-timing-function: ease-in;
+          transform: translateY(200px);
+        }
+      }
+
   
       /* Exercise 9: Create a flickering neon effect */
       /* Target the element with class 'neon' and make it flicker like a neon sign */
-     
+     .neon{
+      width: 100px; height: 100px;
+      margin-top: 200px;
+      background-color: aquamarine;
+      animation: Flicker 5s infinite alternate;
+    }
+    
+    @keyframes Flicker {
+      0%, 18%, 22%, 27%, 33%, 53%, 57%, 100%{
+        box-shadow: 0 0 40px aquamarine;
+      }
+      20%, 24%, 30%, 55%{
+        box-shadow: 0 0 0 aquamarine;
+      }
+    }
   
       /* Exercise 10: Create a complex animation sequence */
       /* Target the element with ID 'sequence' and create a sequence of animations */
