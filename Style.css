@@ -157,6 +157,7 @@ the first exercise has been completed as an example
       }
       
       @keyframes CurvPathX {
+   
         to{
           animation-timing-function: ease-out;
           transform: translateX(200px);
@@ -182,7 +183,7 @@ the first exercise has been completed as an example
     
     @keyframes Flicker {
       0%, 18%, 22%, 27%, 33%, 53%, 57%, 100%{
-        box-shadow: 0 0 40px aquamarine;
+        box-shadow: 0 0 60px aquamarine;
       }
       20%, 24%, 30%, 55%{
         box-shadow: 0 0 0 aquamarine;
@@ -191,15 +192,70 @@ the first exercise has been completed as an example
   
       /* Exercise 10: Create a complex animation sequence */
       /* Target the element with ID 'sequence' and create a sequence of animations */
-      
+      #sequence{
+        width: 100px; height: 100px;
+        content: "";
+        animation: complexX 2s infinite ease-in alternate;
+      }
+      #sequence::after{
+        width: 100px; height: 100px;
+        background-color: red;
+        content: "10";
+        text-align: center;
+        align-content: center;
+        animation: complexY 2s infinite ease-out alternate;
+      }
+      @keyframes complexX {
+        100%{ 
+          animation-timing-function: ease-out;
+          transform: translateX(200px);
+          transform: rotateZ(-180deg);
+        }
+    
+      }
+      @keyframes complexY {
+        50%{
+          animation-timing-function: ease-in;
+          transform: translateY(200px);
+        }
+      }
   
      /* Exercise 11 - Staggered animations */
      /* We will create three divs that animate differently based on their order. 
         use a child combinator to style each child element */
-      
-  
+      .stagger .format{
+        width: 100px; height: 100px;
+      }
+      .stagger .format:first-child{
+        background-color: blue;
+        animation: A 2s infinite alternate 6s;
+      }
+      .stagger .format:nth-child(2n){
+        background-color: green;
+        animation: B 2s infinite alternate 2.5s;
+      }
+      .stagger .format:last-child{
+        animation-play-state: running;
+        background-color: red;
+        animation: C 2s infinite alternate 1.25s;
+      }
      /*  - Use the nth-child(n) selector to apply different animation delays to each div */
-  
+      
+     @keyframes A {
+      to{
+        transform: translateX(200px);
+      }
+     }
+     @keyframes B {
+      to{
+        transform: translateX(200px);
+      }
+     }
+     @keyframes C {
+      to{
+        transform: translateX(200px);
+      }
+     }
      
   
       /* - Utilise the calc() function within keyframes to dynamically calculate values. */
@@ -207,4 +263,9 @@ the first exercise has been completed as an example
   
    /* Exercise 12: Stopping the animation */
    /* Add a button element to your html markup. Target this button with a class of .stop-button */
-  
+  .stop-button{
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+  }
